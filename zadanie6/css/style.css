@@ -1,0 +1,32 @@
+body,html{
+    margin:0;
+}
+
+header{
+    width: 45%;
+    margin: 2% auto 0;
+    background-color: #353535;
+    color: white;
+    border-radius: 1em;
+    padding: 1% 0;
+    text-align: center;
+}
+
+#my-chart{
+    max-height: 300px;
+    margin: 5% 10%;
+    border: 1px solid black;
+}
+
+input[type="radio"]{
+    margin-top: 30%;
+
+}
+
+input[type="number"], input[type="range"]{
+    width: 150px;
+}
+
+#slider-div, #number-div{
+    display: none;
+}

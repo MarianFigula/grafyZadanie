@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html lang="sk">
+<head>
+    <meta charset="UTF-8">
+    <title>Grafy</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-1BmE4kWBq78iYhFldvKuhfTAU6auU8tT94WrHftjDbrCEXSU1oBoqyl2QvZ6jIW3" crossorigin="anonymous">
+    <link rel="stylesheet" href="css/style.css" type="text/css">
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/3.6.0/chart.min.js" integrity="sha512-GMGzUEevhWh8Tc/njS0bDpwgxdCJLQBWG3Z2Ct+JGOpVnEmjvNx6ts4v6A2XJf1HOrtOsfhv3hBKpK9kE5z8AQ==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/hammer.js/2.0.8/hammer.min.js" integrity="sha512-UXumZrZNiOwnTcZSHLOfcTs0aos2MzBWHXOHOuB0J/R44QB0dwY5JgfbvljXcklVf65Gc4El6RjZ+lnwd2az2g==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/chartjs-plugin-zoom/1.1.1/chartjs-plugin-zoom.min.js" integrity="sha512-NxlWEbNbTV6acWnTsWRLIiwzOw0IwHQOYUCKBiu/NqZ+5jSy7gjMbpYI+/4KvaNuZ1qolbw+Vnd76pbIUYEG8g==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+    <script src="jsFiles/tag.js" type="module"></script>
+
+</head>
+<body>
+
+<header id="hlavicka">
+    <h1>Graf</h1>
+
+</header>
+
+<br><br><br><br>
+
+<div class="container">
+    <div class="row justify-content-md-center">
+        <section class="col col-lg-3 border border-2 border-dark rounded-3 pb-4 pt-3 text-center">
+            <h4>Amplitúda (1-15)</h4>
+            <label><input id="slider" class="fs-3" type="radio" name="vyber-amplitudy" value="slider" onclick="prepinacRadioButton()"> Slider</label>
+            <label><input id="pole" class="fs-3" type="radio" name="vyber-amplitudy" value="pole" onclick="prepinacRadioButton()"> Text</label>
+
+            <div class="ms-2 mt-4" id="number-div">
+                <label>
+                    <input class="inputNumber" id="number-input" min="1" max="15" type="number" value="1" onblur="validateNumberInput()"/>
+                </label>
+                <p id="error-msg" class="mt-2"></p>
+            </div>
+
+            <div id="slider-div" class="mt-2">
+            <span id="vystup" class="">1</span>
+                <br>
+                <label>
+                    <input class="inputRange" type="range" min="1" max="15" value="1" />
+                </label>
+            </div>
+            <!--<label for="num1"></label><input class="inputNumber" id="num1" min="0" max="100" type="number" value="0" />-->
+        </section>
+
+        <div class="col col-md-3"></div>
+
+        <section class="col col-lg-3 border border-2 border-dark rounded-3 pb-3 pt-3">
+            <h4 class="text-center">Zobrazené grafy</h4>
+            <div class="ps-4 mt-3">
+                <input type="checkbox" id="sin" value="sin" name="pocet-grafov" onchange="validateCheckbox()" checked>
+                <label for="sin" class="mt-2">Sínus</label>
+                <br>
+                <input type="checkbox" id="cos" value="cos" name="pocet-grafov" onchange="validateCheckbox()" checked>
+                <label for="cos" class="mt-2">Kosínus</label>
+            </div>
+        </section>
+
+        <div class="row mt-4">
+            <div class="col-md-2"></div>
+            <button class="col col-lg-2 btn btn-primary btn-md mt-3" type="button" onclick="ukonci()">Koniec</button>
+        </div>
+    </div>
+</div>
+
+
+<canvas id="my-chart" width="400" height="400"></canvas>
+
+<footer class="modal-footer border-dark">
+    <br>
+    © 2021, Marián Figula
+</footer>
+
+</body>
+
+<script src="jsFiles/indexJs.js"></script>
+
+
+
+</html>
